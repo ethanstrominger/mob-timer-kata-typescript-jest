@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@swc/core": "^1.2.174",
+    "@swc/jest": "^0.2.20",
+    "@types/jest": "^27.4.1",
+    "add": "^2.0.6",
+    "babel-jest": "^27.5.1",
+    "jest": "^28.1.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3",
+    "yarn": "^1.22.18"
+  },
+  "scripts": {
+    "test": "jest --watch --verbose",
+    "debug": "node --debug-brk --inspect ./node_modules/jest/bin/jest -i"
+  } 
+}

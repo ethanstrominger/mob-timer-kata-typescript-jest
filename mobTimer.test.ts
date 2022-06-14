@@ -14,17 +14,21 @@ test.skip("Set duration to 3.5 minutes", () => {
   expect(mobTimer.durationMinutes).toEqual(3.5);
 });
 
-test.skip("Initial status - status is READY", () => {
-  const mobTimer = new MobTimer();
-  expect(mobTimer.status).toEqual("READY");
-});
-
-test.skip("Start timer - status is RUNNING", () => {});
-test.skip("Pause timer - status is PAUSED", () => {});
-test.skip("Resume timer - status is RUNNING", () => {});
 test.skip("Get time string before started", () => {
   const mobTimer = new MobTimer();
   expect(mobTimer.timeRemainingString).toEqual("0:00");
 });
 
+test.skip("Initial status - status is READY", () => {});
+
+test.skip("Start timer - status is RUNNING", () => {});
+
+test.skip("Seconds remaining equals 0 before started", () => {
+});
+test.skip("Seconds remaing equals 5 * 60 after started", () => {})
+
+test.skip("Get time string before started", () => {
+  const mobTimer = new MobTimer();
+  expect(mobTimer.timeRemainingString).toEqual("0:00");
+});
 test.skip("Get time string after started", () => {});

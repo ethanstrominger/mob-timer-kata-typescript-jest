@@ -17,7 +17,7 @@ test("Set duration to 3.5 minutes", () => {
 
 test("Get time string before started", () => {
   const mobTimer = new MobTimer();
-  expect(mobTimer.timeRemainingString).toEqual("0:00");
+  expect(mobTimer.timeRemainingString).toEqual("00:00");
 });
 
 test("Initial status - status is READY", () => {
@@ -31,12 +31,26 @@ test("Start timer - status is RUNNING", () => {
   expect(mobTimer.status).toEqual(Statuses.Running);
 });
 
-test.skip("Seconds remaining equals 0 before started", () => {
-});
-test.skip("Seconds remaing equals 5 * 60 after started", () => {})
-
-test.skip("Get time string before started", () => {
+test("Seconds remaining equals 0 before started", () => {
   const mobTimer = new MobTimer();
-  expect(mobTimer.timeRemainingString).toEqual("0:00");
+  expect(mobTimer.timeRemaining).toEqual(0);
 });
-test.skip("Get time string after started", () => {});
+
+test("Seconds remaing equals 5 * 60 after started", () => {
+  const mobTimer = new MobTimer();
+  mobTimer.start();
+  expect(mobTimer.timeRemaining).toEqual(5 * 60);
+})
+
+test("Get time string after started", () => {
+  const mobTimer = new MobTimer();
+  mobTimer.start();
+  expect(mobTimer.timeRemainingString).toEqual("05:00")
+});
+
+test("Time remaining decreases by one second", ()=>{
+  const mobTimer = new MobTimer();
+  mobTimer.start();
+  mobTimer.decreaseSeconds(1);
+  expect(mobTimer.timeRemaining).toEqual((5 * 60) - 1);
+})
